@@ -17,8 +17,8 @@ const userSchema = new Schema(
 		},
 		roles: [
 			{
-				ref: 'Role',
 				type: Schema.Types.ObjectId,
+				ref: 'Role',
 			},
 		],
 	},
@@ -28,7 +28,7 @@ const userSchema = new Schema(
 	}
 );
 
-userSchema.statics.encryptPassword = async (password) => {
+userSchema.statics.encryptPassword = async password => {
 	const salt = await bcrypt.genSalt(10);
 	return await bcrypt.hash(password, salt);
 };
