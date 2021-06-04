@@ -36,6 +36,7 @@ export const signUp = async (req, res) => {
 };
 
 export const signIn = async (req, res) => {
+	console.log('qwewqwe')
 	const { email, password } = req.body;
 
 	const userFound = await User.findOne({ email: email }).populate('roles');

@@ -10,6 +10,6 @@ router.get(
 	[verifySignup.checkUsernameOrEmailExist, verifySignup.checkRolesExist],
 	authCtrl.signUp
 );
-router.get('/signin', authCtrl.signIn);
+router.post('/signin', authCtrl.signIn);
 
 export default router;
